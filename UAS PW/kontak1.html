@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak Kami</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <img src="gambar/ee17758a-e88a-4f1b-8895-483ee78a44e3-removebg.png" alt="Logo Lombok" class="logo-img">
+            <h1>Pariwisata Lombok</h1>
+        </div>
+        <nav class="nav">
+            <ul>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="tentang-lombok1.html">Tentang Lombok</a></li>
+                    <li><a href="sejarah.html">Sejarah</a></li>
+                    <li><a href="destinasi1.html">Destinasi</a></li>
+                    <li><a href="kontak1.html">Kontak</a></li>
+                </ul>
+        </nav>        
+        <div class="hamburger" id="hamburger-menu">
+            <span>&#9776;</span>
+        </div>       
+    </header>
+    <!-- Bagian Kontak -->
+    <section id="komentar" class="komentar">
+        <h2>Komentar & Kontak</h2>
+        <div class="komentar-container">
+            <div class="form-container">
+                <form action="" method="post">
+                    <label for="nama">Nama:</label>
+                    <input type="text" id="nama" name="nama" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="komentar">Komentar:</label>
+                    <textarea id="komentar" name="komentar" rows="4" required></textarea>
+
+                    <button type="submit" class="btn">Kirim Komentar</button>
+                </form>
+            </div>  
+
+                  
+            <div class="kontak-container">
+                <h3>Kontak Kami</h3>
+                <p>Untuk pertanyaan lebih lanjut, Anda bisa menghubungi kami melalui:</p>
+                <ul>
+                    <li><strong>Email:</strong><a href="mailto:info@pariwisatalombok.com" style="color: #001aff;">info@pariwisatalombok.com</a></li>                    
+                    <li><strong>Telepon:</strong> +62 123 456 789</li>
+                    <li><strong>Alamat:</strong> Jalan Raya Lombok No. 1, Mataram, Lombok</li>
+                </ul>
+
+                <h3>Sosial Media</h3>
+                <ul class="social-media">
+                    <li><a href="https://facebook.com/pariwisatalombok" target="_blank">Facebook</a></li>
+                    <li><a href="https://twitter.com/pariwisatalombok" target="_blank">Twitter</a></li>
+                    <li><a href="https://instagram.com/pariwisatalombok" target="_blank">Instagram</a></li>
+                    <li><a href="https://youtube.com/pariwisatalombok" target="_blank">YouTube</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bagian Footer -->
+    <footer>
+        <p>&copy; 2025 Pariwisata Lombok. All rights reserved.</p>
+    </footer>
+    <script>document.querySelector('.form-container form').addEventListener('submit', function(e) {
+        const nama = document.getElementById('nama').value;
+        const email = document.getElementById('email').value;
+        const komentar = document.getElementById('komentar').value;
+    
+        if (nama === '' || email === '' || komentar === '') {
+            alert('Semua field harus diisi!');
+            e.preventDefault(); // Mencegah pengiriman formulir
+        } else {
+            alert('Komentar Anda telah dikirim! Terima kasih.');
+        }
+    });
+    </script>
+</body>
+</html>

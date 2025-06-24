@@ -1,0 +1,734 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+h1, h2, h3 {
+    font-family: 'Georgia', serif;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.hero {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    height: 75vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero .hero-content {
+    z-index: 1; 
+}
+
+.hero h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    font-family: 'Georgia', serif;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+    font-family: 'Arial', sans-serif;
+}
+.btn {
+    background-color: #009688;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #00796b;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #009688;
+    padding: 20px;
+}
+
+header .logo {
+    display: flex; /* Menggunakan flexbox untuk menyusun elemen secara horizontal */
+    align-items: center; /* Menyusun logo dan teks secara vertikal di tengah */
+}
+
+header .logo .logo-img {
+    width: 50px; /* Sesuaikan ukuran logo */
+    height: auto; /* Agar proporsi logo tetap terjaga */
+    margin-right: 10px; /* Memberikan jarak antara logo dan teks */
+}
+
+header .logo h1 {
+    font-size: 30px;
+    color: #fff;
+    margin: 0; /* Menghilangkan margin default pada h1 */
+}
+
+
+/* Hide menu items by default on small screens */
+nav ul {
+    display: flex;
+    list-style-type: none;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 30px;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none; /* Initially hide menu */
+        flex-direction: column; /* Stacked layout */
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #009688;
+        width: 100%;
+        padding: 20px;
+    }
+
+    nav ul li {
+        margin: 15px 0;
+    }
+
+    .hamburger {
+        display: block; /* Show hamburger menu */
+    }
+}
+
+nav ul li a {
+    font-size: 20px;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background-color: #00796b;
+}
+
+/* Hero Section */
+.hero {
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+/* Tentang Lombok Section */
+.tentang-lombok1 {
+    padding: 80px 20px;
+    background-color: #f7f7f7;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+}
+
+.tentang-lombok1::before,
+.tentang-lombok1::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.2; /* Transparansi gambar */
+}
+
+.tentang-lombok1::before {
+    left: 0;
+    background-image: url('gambar/lombok-left.jpg'); /* Ganti dengan URL gambar kiri */
+}
+
+.tentang-lombok1::after {
+    right: 0;
+    background-image: url('gambar/lombok-right.jpg'); /* Ganti dengan URL gambar kanan */
+}
+
+.tentang-lombok1 h2 {
+    font-size: 42px;
+    font-family: 'Georgia', serif;
+    color: #333;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.tentang-lombok1-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dua kolom */
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    align-items: center;
+}
+
+.tentang-lombok1-content .text {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #555;
+    text-align: justify;
+}
+
+.tentang-lombok1-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tentang-lombok1-content img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .tentang-lombok1-content {
+        grid-template-columns: 1fr; /* Satu kolom pada layar kecil */
+    }
+
+    .tentang-lombok1 h2 {
+        font-size: 32px;
+    }
+
+    .tentang-lombok1-content .text {
+        font-size: 16px;
+        text-align: justify;
+    }
+}
+
+/* Tentang Lombok Section */
+.tentang-lombok {
+    padding: 60px 20px;
+    background-color: #ffffff;
+    text-align: center;
+
+    /* Multiple background image */
+    background-image: 
+        url('gambar/360_F_244567019_SRb5i27LHFzblS6dpOhDUu8nsdRgmgh5.jpg'),
+        url('gambar/360_F_244567019_SRb5i27LHFzblS6dpOhDUu8nsdRgmgh5.jpg');
+    background-repeat: no-repeat, no-repeat; 
+    background-position: left center, right center; 
+    background-size: 60px 100%; 
+}
+
+
+.tentang-lombok h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-family: 'Georgia', serif;
+    color: #222; 
+}
+
+.tentang-lombok-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 15px; 
+}
+
+.tentang-lombok-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin: 20px 0;
+    object-fit: cover;
+}
+
+.tentang-lombok h3 {
+    font-size: 28px;
+    margin-top: 40px;
+    font-family: 'Georgia', serif;
+    color: #333;
+}
+
+.tentang-lombok p {
+    font-size: 18px;
+    line-height: 1.8; 
+    color: #555;
+    margin-bottom: 20px;
+    text-align: justify; 
+}
+
+@media (max-width: 768px) {
+    .tentang-lombok {
+        padding: 40px 10px;
+    }
+
+    .tentang-lombok h2 {
+        font-size: 30px;
+        margin-bottom: 15px;
+    }
+
+    .tentang-lombok h3 {
+        font-size: 24px;
+        margin-top: 30px;
+    }
+
+    .tentang-lombok p {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    .tentang-lombok-content {
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .tentang-lombok h2 {
+        font-size: 26px;
+    }
+
+    .tentang-lombok h3 {
+        font-size: 20px;
+    }
+
+    .tentang-lombok p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+}
+
+/* Sejarah Lombok Section */
+.sejarah-lombok {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+.sejarah-content h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-family: 'Georgia', serif;
+    color: #005f6b;
+}
+
+.sejarah-content h3 {
+    font-size: 28px;
+    margin-top: 30px;
+    font-family: 'Georgia', serif;
+    color: #00768f;
+}
+
+.sejarah-content p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.sejarah-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Responsiveness for smaller screens */
+@media (max-width: 768px) {
+    .sejarah-content h2 {
+        font-size: 30px;
+    }
+
+    .sejarah-content h3 {
+        font-size: 24px;
+    }
+
+    .sejarah-content p {
+        font-size: 16px;
+    }
+}
+
+.destinasi1 {
+    padding: 50px 20px;
+    background-color: #f0f8ff;
+    text-align: center;
+}
+
+.destinasi1 h2 {
+    font-size: 36px;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.destinasi1-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.destinasi1-item {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.destinasi1-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.destinasi1-item img {
+    width: 100%;
+    height: auto;
+}
+
+.destinasi1-item h3 {
+    font-size: 20px;
+    color: #444;
+    margin: 15px 0;
+}
+
+.destinasi1-item p {
+    font-size: 16px;
+    color: #666;
+    padding: 0 15px 15px;
+    text-align: justify;
+}
+
+/* Destinasi Section */
+.destinasi {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.destinasi h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.destinasi-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.destinasi-item {
+    width: 30%;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.destinasi-item img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.destinasi-item h3 {
+    font-size: 24px;
+    margin: 15px 0;
+}
+
+/* Menambahkan efek pop-out pada gambar */
+.destinasi-item img, .galeri-container img {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Ketika kursor melayang di atas gambar, terapkan efek pop-out */
+.destinasi-item img:hover, .galeri-container img:hover {
+    transform: scale(1.1); /* Membesarkan gambar sedikit */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Menambahkan bayangan untuk efek pop-out */
+}
+
+.destinasi-item img, .galeri-container img {
+    display: block; /* Menghilangkan jarak bawah pada gambar */
+    width: 100%; 
+    border-radius: 8px; 
+    object-fit: cover; 
+}
+
+/* Galeri Section */
+.galeri {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.galeri h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.galeri-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.galeri-container img {
+    width: 30%;
+    margin: 10px 0;
+    border-radius: 10px;
+}
+
+/* Peta Section */
+.peta {
+    padding: 60px 20px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+/* Video Section */
+.video {
+    padding: 60px 20px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.video h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.video-container {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* Map Section */
+.map {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.map-container {
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.map iframe {
+    width: 100%;
+    height: 450px;
+    border: 0;
+}
+
+/* Kontak Section */
+.komentar-container {
+    padding: 60px 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    background: linear-gradient(to right, #009688, #4caf50); /* Gradient background */
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+.komentar form {
+    width: 150%;
+    max-width: 800px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease; /* Hover effect */
+}
+
+.komentar form:hover {
+    transform: scale(1.03); /* Slight zoom effect on hover */
+}
+
+.komentar label {
+    display: block;
+    font-size: 18px; /* Increased font size for labels */
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.komentar input, .komentar textarea {
+    width: 100%;
+    padding: 12px; /* Increased padding for better input experience */
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.komentar textarea {
+    resize: vertical;
+}
+
+.komentar h2 {
+    font-size: 28px; /* Larger header for better visibility */
+    text-align: center;
+    margin-bottom: 0.5px;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    color: #000000; /* White text color for better contrast */
+}
+
+.kontak-container {
+    width: 35%;
+    text-align: left;
+    background-color: #fff; /* White background for contrast */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.kontak-container h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #009688; /* Accent color for headings */
+}
+
+.kontak-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.kontak-container ul li {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.kontak-container ul li strong {
+    font-weight: bold;
+    color: #00796b; /* Slightly darker green for stronger emphasis */
+}
+
+.social-media {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.social-media li {
+    margin-bottom: 12px;
+}
+
+.social-media a {
+    text-decoration: none;
+    color: #009688;
+    font-size: 18px;
+    transition: color 0.3s ease; /* Smooth hover transition */
+}
+
+.social-media a:hover {
+    color: #00796b; /* Darker color on hover */
+}
+
+.btn {
+    background-color: #00796b;
+    color: rgb(248, 245, 245);
+    border: none;
+    padding: 12px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #004d40; /* Darker green on hover */
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+    .komentar-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .form-container, .kontak-container {
+        width: 100%;
+    }
+
+    .komentar h2 {
+        font-size: 24px;
+    }
+
+    .kontak-container h3 {
+        font-size: 22px;
+    }
+
+    .komentar label,
+    .komentar input,
+    .komentar textarea,
+    .kontak-container ul li {
+        font-size: 14px;
+    }
+}
+
+.scroll-to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none; /* Hide by default */
+    font-size: 16px;
+}
+
+.scroll-to-top-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #009688;
+    color: white;
+}
